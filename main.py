@@ -1,6 +1,6 @@
 from gui import ColorGUI
 from database import ColorDatabase
-from chatgpt_interaction import ChatGPTInteraction
+from Interaction import ChatGPTInteraction
 
 def main():
     # Initialize GUI
