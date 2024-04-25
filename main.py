@@ -14,8 +14,7 @@ def main():
     api_key = "sk-proj-G4Y9IDRsW18kej8zMmqxT3BlbkFJdjrzqHl1GpsIcYpMWGq0"
     chatgpt_interaction = ChatGPTInteraction(api_key)
 
-    # Placeholder code for integrating modules
-    # Example: Retrieve data from database and update GUI
+    # Retrieve data from database and update GUI
     responses = color_db.retrieve_responses()
 
     for response in responses:
@@ -24,7 +23,7 @@ def main():
         #display reason on gui
         color_gui.display_color_reason(date, reason)
 
-    # Get the current date (you need to implement this functionality)
+    # Get the current date (need to implement this functionality)
     current_date = "2024-04-17"  # Placeholder for the current date
 
     # Ask ChatGPT for the color of the current day
