@@ -6,6 +6,7 @@ class ChatGPTInteraction:
     def __init__(self, api_key):
         openai.api_key = api_key
 
+        api_key = "sk-proj-G4Y9IDRsW18kej8zMmqxT3BlbkFJdjrzqHl1GpsIcYpMWGq0"
     def ask_question(self, question):
         try:
             headers = {
