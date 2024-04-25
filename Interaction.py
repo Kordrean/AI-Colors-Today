@@ -1,4 +1,6 @@
 import openai
+import requests
+
 
 class ChatGPTInteraction:
     def __init__(self, api_key):
@@ -6,7 +8,12 @@ class ChatGPTInteraction:
 
     def ask_question(self, question):
         try:
-            response = openai.Completion.create(
+            headers = {
+                "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}"
+            }
+            response = requests.post(
+                endpoint_url,
+                headers=headers
                 engine="text-davinci-002",
                 prompt=question,
                 max_tokens=50
