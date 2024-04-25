@@ -10,13 +10,14 @@ class ColorGUI:
         self.canvas.pack()
 
     def create_gradient(self):
+        pass
         # Code to create and display the rainbow gradient
 
     def display_color_reason(self, date, reason):
-        # Code to display the reason for a selected date
+        pass # Code to display the reason for a selected date
 
     def update_gui(self):
-        # Code to update the GUI with new data
+        pass # Code to update the GUI with new data
 
 # Example usage:
 if __name__ == "__main__":
