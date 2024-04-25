@@ -41,7 +41,7 @@ def main():
         color_gui.display_color_reason(current_date, reason)
 
     # Start GUI event loop
-    color_gui.root.mainloop()
+    color_gui.window.mainloop()
 
 if __name__ == "__main__":
     main()

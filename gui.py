@@ -4,11 +4,11 @@ from database import ColorDatabase
 
 class ColorGUI:
     def __init__(self):
-        self.root = tk.Tk()
-        self.root.title("Daily Color Analysis")
-        self.root.geometry("800x600")
+        self.window = tk.Tk()
+        self.window.title("Daily Color Analysis")
+        self.window.geometry("800x600")
 
-        self.canvas = tk.Canvas(self.root, width=600, height=400)
+        self.canvas = tk.Canvas(self.window, width=600, height=400)
         self.canvas.pack()
 
         self.database = ColorDatabase("color_responses.db")
@@ -24,7 +24,7 @@ class ColorGUI:
     
     def display_color_reason(self, date, reason):
         # Display reason for selected date
-        self.root.title(f"Color Analysis - {date}")
+        self.window.title(f"Color Analysis - {date}")
         self.status_bar.config(text=reason)
 
     def update_gui(self):
@@ -47,4 +47,4 @@ if __name__ == "__main__":
     color_gui = ColorGUI()
     color_gui.create_gradient()
     color_gui.update_gui()
-    color_gui.root.mainloop()
+    color_gui.window.mainloop()
