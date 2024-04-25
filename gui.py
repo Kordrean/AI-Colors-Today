@@ -21,11 +21,26 @@ class ColorGUI:
         for i in range(256):
             color = f"#{i:02X}00FF"
             self.canvas.create_rectangle(0, i * 400 / 255, 600, (i + 1) * 400 / 255, fill=color, outline="")
+    
     def display_color_reason(self, date, reason):
-        pass # Code to display the reason for a selected date
+        # Display reason for selected date
+        self.root.title(f"Color Analysis - {date}")
+        self.status_bar.config(text=reason)
 
     def update_gui(self):
-        pass # Code to update the GUI with new data
+        # Retrieve data from the database
+        responses = self.database.retrieve_responses()
+
+        # Clear canvas
+        self.canvas.delete("all")
+
+        # Draw rainbow gradient
+        self.create_gradient()
+
+        # Display reasons for each date
+        for response in responses:
+            date, color_code, reason = response
+            self.display_color_reason(date, reason)
 
 # Example usage:
 if __name__ == "__main__":
