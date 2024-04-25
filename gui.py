@@ -42,7 +42,9 @@ class ColorGUI:
             date, color_code, reason = response
             self.display_color_reason(date, reason)
 
-# Example usage:
+
 if __name__ == "__main__":
     color_gui = ColorGUI()
+    color_gui.create_gradient()
+    color_gui.update_gui()
     color_gui.root.mainloop()
