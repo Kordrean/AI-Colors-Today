@@ -19,21 +19,24 @@ def main():
     responses = color_db.retrieve_responses()
 
     for response in responses:
-        date, color_code, reason = response
+        # print(response)
+        color_code = response[2] 
+        reason = response[3]
 
         # display reason on gui
-        color_gui.display_color_reason(date, reason)
+        color_gui.display_color_reason("", reason)
 
     # Get the current date (need to implement this functionality)
     current_date = "2024-04-17"  # Placeholder for the current date
 
     # Ask ChatGPT for the color of the current day
-    question = "What color best describes today? Give your answer in the color code and state the reason."
+    question = "What color best describes today? Give your answer in the color code and state the reason. Start your reasoning with the phrase '\n\nReason: '. Keep your reasoning within a maximum of 150 characters."
     response = chatgpt_interaction.ask_question(question)
 
     # Assuming response is in the format of "color_code: reason"
     if response:
-        color_code, reason = response.split(":")
+        print(response)
+        color_code, reason = response.split("\n\nReason: ")
 
         # Store the response in the database
         color_db.insert_response(current_date, color_code, reason)

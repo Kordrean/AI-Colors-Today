@@ -11,9 +11,8 @@ class ColorGUI:
         self.canvas = tk.Canvas(self.window, width=600, height=400)
         self.canvas.pack()
 
-        self.status_bar = tk.Label(self.window, text="", bd=1, relief=tk.SUNKEN, anchor=tk.W)
-        self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
-
+        self.status_bar = tk.Label(self.window, text="", bd=1)
+        self.status_bar.pack(side=tk.TOP, fill=tk.X)
         self.database = ColorDatabase("color_responses.db")
 
     def create_gradient(self):
