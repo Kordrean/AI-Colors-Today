@@ -23,8 +23,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Authors:
 
     Keoni Roring - keoniroring@gmail.com
-    JD Guiterrez - jdgutie08@gmail.com
-
+    
 Acknowledgements:
 
     Thanks to OpenAI for providing access to the ChatGPT API.

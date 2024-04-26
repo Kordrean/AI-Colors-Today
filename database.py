@@ -1,5 +1,6 @@
 import sqlite3
 
+
 class ColorDatabase:
     def __init__(self, db_file):
         self.connection = sqlite3.connect(db_file)
@@ -30,6 +31,7 @@ class ColorDatabase:
         ''')
         return self.cursor.fetchall()
 
+
 # Example usage:
 if __name__ == "__main__":
     db_file = "color_responses.db"
@@ -39,3 +41,4 @@ if __name__ == "__main__":
     print("All responses:")
     for response in responses:
         print(response)
+

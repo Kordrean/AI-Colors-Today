@@ -2,6 +2,7 @@ from gui import ColorGUI
 from database import ColorDatabase
 from Interaction import ChatGPTInteraction
 
+
 def main():
     # Initialize GUI
     color_gui = ColorGUI()
@@ -20,7 +21,7 @@ def main():
     for response in responses:
         date, color_code, reason = response
 
-        #display reason on gui
+        # display reason on gui
         color_gui.display_color_reason(date, reason)
 
     # Get the current date (need to implement this functionality)
@@ -33,15 +34,16 @@ def main():
     # Assuming response is in the format of "color_code: reason"
     if response:
         color_code, reason = response.split(":")
-        
+
         # Store the response in the database
         color_db.insert_response(current_date, color_code, reason)
-        
+
         # Update the GUI with the new response
         color_gui.display_color_reason(current_date, reason)
 
     # Start GUI event loop
     color_gui.window.mainloop()
+
 
 if __name__ == "__main__":
     main()
