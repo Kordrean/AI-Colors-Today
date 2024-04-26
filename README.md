@@ -3,6 +3,8 @@ Project Name: Daily Color Analysis with ChatGPT
 Description:
 The Daily Color Analysis project aims to create a program that interacts with the ChatGPT language model daily to inquire about the color that best describes each day. The responses provided by ChatGPT will be stored in a database and visualized through a graphical user interface (GUI) as a rainbow gradient representing the spectrum of colors over time. Users will be able to hover over specific dates on the gradient to retrieve the reasons behind ChatGPT's color choices for that particular day.
 
+This is all I could scrape together with JD not helping until 23:37 to do the UML Diagram assignemnt for the final Project
+
 Features:
 
     Daily interaction with ChatGPT to inquire about the color that best describes each day.

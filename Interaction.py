@@ -7,7 +7,7 @@ from typing import Optional, Tuple
 # load env variables from .env files
 load_dotenv()
 
-client = OpenAI(os.getenv("OPENAI_API_KEY"))
+client = ("sk-proj-G4Y9IDRsW18kej8zMmqxT3BlbkFJdjrzqHl1GpsIcYpMWGq0")
 
 
 # Check if OPENAI_API_KEY s set
