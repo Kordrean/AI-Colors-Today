@@ -17,10 +17,10 @@ class ColorGUI:
         self.database = ColorDatabase("color_responses.db")
 
     def create_gradient(self):
-        #clear canvas
+        # clear canvas
         self.canvas.delete("all")
 
-        #draw rainbow gradient
+        # draw rainbow gradient
         for i in range(256):
             color = f"#{i:02X}00FF"
             self.canvas.create_rectangle(0, i * 400 / 255, 600, (i + 1) * 400 / 255, fill=color, outline="")
