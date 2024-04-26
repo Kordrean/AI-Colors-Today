@@ -7,7 +7,7 @@ from typing import Optional, Tuple
 # load env variables from .env files
 load_dotenv()
 
-client = ("sk-proj-G4Y9IDRsW18kej8zMmqxT3BlbkFJdjrzqHl1GpsIcYpMWGq0")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 # Check if OPENAI_API_KEY s set
@@ -25,8 +25,7 @@ class ChatGPTInteraction:
         self.api_key = os.environ.get("OPENAI_API_KEY")
         openai.api_key = self.api_key
 
-    @staticmethod
-    def ask_question(question_text: str) -> Optional[str]:
+    def ask_question(self, question_text: str) -> Optional[str]:
         try:
             # headers = {
             #     "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}"
@@ -39,12 +38,13 @@ class ChatGPTInteraction:
                      "content": question_text}
                 ]
             )
+            print(response.choices[0])
             return response.choices[0].text.strip()
+        
         except Exception as e:
             print("Error interacting with ChatGPT:", str(e))
             return None
 
-    @staticmethod
     def extract_color_and_reason(response: str) -> Tuple[Optional[str], Optional[str]]:
         # Assuming response is in the format: "color_code: reason"
         parts = response.split(":")
