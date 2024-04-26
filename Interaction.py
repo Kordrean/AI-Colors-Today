@@ -7,11 +7,13 @@ from typing import Optional, Tuple
 # load env variables from .env files
 load_dotenv()
 
+client = OpenAI(os.getenv("OPENAI_API_KEY"))
+
+
 # Check if OPENAI_API_KEY s set
 if not os.getenv("OPENAI_API_KEY"):
     raise ValueError("OPENAI_API_KEY env variable must be set")
 
-client = OpenAI(os.getenv("OPENAI_API_KEY"))
 
 print(os.getenv("OPENAI_API_KEY"))
 
