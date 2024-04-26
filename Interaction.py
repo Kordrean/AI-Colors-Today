@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv, dotenv_values
 
 load_dotenv()
-client = OpenAI(os.getenv("OPENAI_API_KEY")
+client = OpenAI(os.getenv("OPENAI_API_KEY"))
 if not os.getenv("OPENAI_API_KEY"):
     raise ValueError("OPENAI_API_KEY env variable must be set")
 
