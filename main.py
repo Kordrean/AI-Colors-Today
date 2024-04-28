@@ -1,6 +1,7 @@
 from gui import ColorGUI
 from database import ColorDatabase
 from Interaction import ChatGPTInteraction
+import os
 
 
 def main():
@@ -12,7 +13,7 @@ def main():
     color_db = ColorDatabase(db_file)
 
     # Initialize ChatGPT Interaction
-    api_key = "sk-proj-G4Y9IDRsW18kej8zMmqxT3BlbkFJdjrzqHl1GpsIcYpMWGq0"
+    api_key = os.getenv("OPENAI_API_KEY")
     chatgpt_interaction = ChatGPTInteraction(api_key)
 
     # Retrieve data from database and update GUI
