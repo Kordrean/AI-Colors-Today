@@ -27,18 +27,17 @@ class ColorDatabase:
 
     def retrieve_responses(self):
         self.cursor.execute('''
-            SELECT * FROM color_responses
+            SELECT color_code, reason FROM color_responses
         ''')
         return self.cursor.fetchall()
 
 
-# Example usage:
 if __name__ == "__main__":
     db_file = "color_responses.db"
     color_db = ColorDatabase(db_file)
     color_db.insert_response("2024-04-17", "#FF0000", "Red represents excitement.")
     responses = color_db.retrieve_responses()
     print("All responses:")
-    for response in responses:
-        print(response)
+    # for response in responses:
+        # print(response)
 
