@@ -6,17 +6,12 @@ from typing import Optional, Tuple
 # load env variables from .env files
 load_dotenv()
 
-<<<<<<< HEAD
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-=======
->>>>>>> c54c24d (	modified:   Interaction.py)
 
 # Check if OPENAI_API_KEY s set
 if not os.getenv("OPENAI_API_KEY"):
    raise ValueError("OPENAI_API_KEY env variable must be set")
 
-client = OpenAI(os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 print(os.getenv("OPENAI_API_KEY"))
@@ -26,21 +21,14 @@ print('SUCCESSFULLY CONNECTED TO CLIENT', client)
 
 class ChatGPTInteraction:
     def __init__(self, api_key):
-<<<<<<< HEAD
-        self.api_key = os.environ.get("OPENAI_API_KEY")
-        openai.api_key = self.api_key
-
-    def ask_question(self, question_text: str) -> Optional[str]:
-=======
         # self.api_key = os.environ.get("OPENAI_API_KEY")
         # openai.api_key = self.api_key
         self.api_key = os.getenv("OPENAI_API_KEY")
         if not self.api_key:
             raise ValueError("OPENAI_API_KEY env variable must be set")
-        self.client = OpenAI(self.api_key)
+        self.client = OpenAI(api_key=self.api_key)
     @staticmethod
     def ask_question(question_text: str) -> Optional[str]:
->>>>>>> c54c24d (	modified:   Interaction.py)
         try:
             # headers = {
             #     "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}"
