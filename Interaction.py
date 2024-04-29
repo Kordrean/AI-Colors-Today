@@ -33,7 +33,7 @@ class ChatGPTInteraction:
                     {"role": "system", "content": "You are a creative assistant who gives unique responses."},
                     {"role": "user",
                      "content": question_text},
-                    {"role": "system", "content": "", "temperature": 1.2} #Higher temperature means more randomness
+                    {"role": "system", "content": "", "temperature": 1.4} #Higher temperature means more randomness
                 ]
             )
             
@@ -54,11 +54,11 @@ class ChatGPTInteraction:
             return None, None
 
 
-if __name__ == "__main__":
-    chatgpt_interaction = ChatGPTInteraction(api_key=os.getenv("OPENAI_API_KEY"))
-    question = "What color best describes today? Give your answer in the color code and state the reason why."
-    response_text = chatgpt_interaction.ask_question(question)
-    if response_text:
-        print("ChatGPT's response:", response_text)
-    else:
-        print("Failed to get a response from ChatGPT.")
+# if __name__ == "__main__":
+    # chatgpt_interaction = ChatGPTInteraction(api_key=os.getenv("OPENAI_API_KEY"))
+    # question = "What color best describes today? Give your answer in the color code and state the reason why."
+    # response_text = chatgpt_interaction.ask_question(question)
+    # if response_text:
+        # print("ChatGPT's response:", response_text)
+    # else:
+        # print("Failed to get a response from ChatGPT.")

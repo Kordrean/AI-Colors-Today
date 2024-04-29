@@ -27,18 +27,18 @@ def main():
         color_code = response[0] 
         reason = response[1]
 
-        # display reason on gui
-        color_gui.display_color_reason("", reason)
+        # display latest reason on gui
+        color_gui.update_gui()
 
         #Append color code to lsit
         color_codes.append(color_code)
         # print(color_code)
 
-    # Get the current date (needs to implement this functionality)
+    # Get the current date (needs to implement this functionality eventually)
     current_date = "2024-04-17"  # Placeholder for the current date
 
     # Ask ChatGPT for the color of the current day
-    question = "What color best describes today? Give your answer in the color code and state the reason. Start your reasoning with the phrase '\n\nReason: '. Keep your reasoning within a maximum of 150 characters."
+    question = "What color best describes today? Give your answer in the color code and state the reason. Start your reasoning with the phrases 'Color Code:' and '\n\nReason: '. Keep your reasoning within a maximum of 200 characters."
     response = chatgpt_interaction.ask_question(question)
 
     if response:
@@ -50,7 +50,7 @@ def main():
             # Store response in database
             color_db.insert_response(current_date, color_code, reason)
             # Update GUI with new response
-            color_gui.display_color_reason(current_date, reason)
+            color_gui.update_gui()
 
     # Start GUI event loop
     color_gui.window.mainloop()
