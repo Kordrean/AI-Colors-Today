@@ -12,7 +12,7 @@ class ColorGUI:
         # self.response_label = tk.Label(self.window, text="", wraplength=600)
         # self.response_label.pack(side=tk.TOP, fill=tk.X)
         responses = self.database.retrieve_responses()
-        print(responses)
+        # print(responses)
         if responses:
             latest_response = responses[-1] # Assuming the latest response is at the end of the list
             color_code, _ = latest_response #Unpack date, color_code, and reason

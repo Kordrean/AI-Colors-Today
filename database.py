@@ -37,7 +37,7 @@ if __name__ == "__main__":
     color_db = ColorDatabase(db_file)
     color_db.insert_response("2024-04-17", "#FF0000", "Red represents excitement.")
     responses = color_db.retrieve_responses()
-    print("All responses:")
-    for response in responses:
-        print(response)
+    # print("All responses:")
+    # for response in responses:
+        # print(response)
 
