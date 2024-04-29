@@ -41,7 +41,9 @@ def main():
     question = "What color best describes today? Give your answer in the color code and state the reason. Start your reasoning with the phrases 'Color Code:' and '\n\nReason: '. Keep your reasoning within a maximum of 200 characters."
     response = chatgpt_interaction.ask_question(question)
 
-    if response:
+    color_code, reason = chatgpt_interaction.extract_color_and_reason(response)
+    color_db.insert_response(current_date, color_code, reason)
+    '''if response:
         print(response)
         parts = response.split("\n\nReason: ")
         if len(parts) == 2:
@@ -50,7 +52,7 @@ def main():
             # Store response in database
             color_db.insert_response(current_date, color_code, reason)
             # Update GUI with new response
-            color_gui.update_gui()
+            color_gui.update_gui() '''
 
     # Start GUI event loop
     color_gui.window.mainloop()

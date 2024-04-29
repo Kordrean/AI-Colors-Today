@@ -43,11 +43,12 @@ class ChatGPTInteraction:
             print("Error interacting with ChatGPT:", str(e))
             return None
 
-    def extract_color_and_reason(response: str) -> Tuple[Optional[str], Optional[str]]:
+    def extract_color_and_reason(self, response: str) -> Tuple[Optional[str], Optional[str]]:
         # Assuming response is in the format: "color_code: reason"
         parts = response.split("\n\nReason: ")
+        # parts = response.split("Color Code: ")
         if len(parts) == 2:
-            color_code = parts[0].strip()
+            color_code = parts[0][12:].strip()
             reason = parts[1].strip()
             return color_code, reason
         else:
